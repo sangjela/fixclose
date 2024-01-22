@@ -10,4 +10,9 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'fixclose';
+
+  public showHi(): void {
+    //alert('Hi EveryBody');
+    window.close();
+  }
 }

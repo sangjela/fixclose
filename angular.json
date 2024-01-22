@@ -27,7 +27,9 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/closeUtil.js"
+            ]
           },
           "configurations": {
             "production": {

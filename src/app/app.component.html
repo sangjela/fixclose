@@ -319,7 +319,10 @@
             />
           </svg>
         </a>
-        <button (click)="showHi()">Hi!!!!</button>
+        <button (click)="closeThis()">Self Close At Root</button>
+        <!-- <button (click)="pushToClose()">Push to self close Page </button> -->
+        <button routerLink="/first-component" routerLinkActive="active" ariaCurrentWhenActive="page">Push to self close Page </button>
+        
       </div>
     </div>
   </div>

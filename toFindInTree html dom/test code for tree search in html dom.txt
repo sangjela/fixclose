@@ -1,0 +1,70 @@
+ーーーーーーーー
+playground = https://jsfiddle.net/
+------------ html
+<html>
+
+<body>
+  <div id="d1" comment="a line of contents">
+    <span id="sp1">
+      some
+      <span id="spOnTag1">
+        <tagme id="tag1">
+          t1
+        </tagme>
+      </span>
+
+      normal word
+
+    </span>
+
+    <span id="sp2">
+      <span id="spOnTag2">
+        <tagme id="tag2">
+          t2
+        </tagme>
+      </span>
+      som2
+    </span>
+    
+  </div>
+  
+  <p>
+    ppp
+  </p>
+  
+</body>
+
+</html>
+
+-----
+jQuery 2.1.3
+----- code
+
+$("p").css("background-color", "yellow"); //basic
+
+$("tagme").css("background-color", "red"); //basic+
+
+//normally...
+console.log("doc contain body", $.contains( document.documentElement, document.body ) ); // true
+
+console.log("body contain doc", $.contains( document.body, document.documentElement ) ); // false
+
+console.log("sp1 has tag1 ?", $.contains( $("#sp1:first"), $("#tag1:first") ) ); //not work for multi depth
+
+//retrieve tree by find() -> flatten result = found all under a node
+let flatList = $("#d1").find("span, tagme");
+let flatListArray = $("#d1").find("span, tagme").toArray(); //to use contains()
+let tag1Node = $("#tag1").toArray()[0];
+console.log("flatten list result", flatListArray);
+console.log("tag1Node", tag1Node);
+
+console.log("found under d1", flatList);
+console.log("d1 include tag1 multi Depth ?", flatListArray.includes(tag1Node));//work. true ★
+console.log("d1 $.contains tag1 multi Depth ?", $.contains(flatListArray, tag1Node));//fail. false
+
+//retrieve children only find direct child. 
+let directChildrens = $("#d1").children();
+let directChildrensArray = directChildrens.toArray();//to use contains()
+console.log("direct child under d1", directChildrens);
+console.log("d1 include tag1 single Depth ?", directChildrensArray.includes(tag1Node));//not for we
+console.log("d1 $.contains tag1 single Depth ?", $.contains(directChildrensArray, tag1Node));//not for we

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Test</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<script type="text/javascript"
+	src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous">
+	</script>
+	
+	<script type="text/javascript"
+	src="./testCodeWrap.js">
+	</script>
+
+	<script type="text/javascript">
+    window.onload = testCode;
+	</script>
+</head>
+
+<body>
+  <div id="d1" comment="a line of contents">
+    <span id="sp1">
+      some
+      <span id="spOnTag1">
+        <tagme id="tag1">
+          t1
+        </tagme>
+      </span>
+
+      normal word
+
+    </span>
+
+    <span id="sp2">
+      <span id="spOnTag2">
+        <tagme id="tag2">
+          t2
+        </tagme>
+      </span>
+      som2
+    </span>
+    
+  </div>
+  
+  <p>
+    ppp
+  </p>
+  
+</body>
+
+</html>
+
